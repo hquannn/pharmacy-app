@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1668dc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+#root,
+.ant-app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ant-spin-fullscreen .ant-spin-dot {
+  color: var(--primary-color);
+}
+
+.ant-table-body,
+.ant-drawer-body {
+  scrollbar-width: auto;
+  scrollbar-color: auto;
+}
+
+.ant-table-body::-webkit-scrollbar,
+.ant-drawer-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ant-table-body::-webkit-scrollbar-track,
+.ant-drawer-body::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb,
+.ant-drawer-body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #e8e8e8;
+}
+.bg-none {
+  background: none !important;
+}

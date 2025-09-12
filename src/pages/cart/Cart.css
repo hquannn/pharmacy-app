@@ -1,0 +1,27 @@
+
+.pos-list-med .ant-card-actions > li {
+    margin: 0;
+}
+
+.pos-list-med .ant-card-actions .add-to-cart {
+    width: 100%;
+}
+.border-warning {
+    border: 1px solid #EB772FFF !important;
+}
+.customer-info {
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px dashed #c3c3c3;
+}
+.autocomplete-customer .ant-select-selection-placeholder {
+    left: 1rem !important;
+}
+.ant-tabs-tab-active h4{
+    color: var(--primary-color)!important;
+}
+.check-box-points {
+    display: flex;
+    justify-content: end;
+}
