@@ -29,7 +29,6 @@ import Report from "@/pages/report/Report"
 import Store from "@/pages/store/Store"
 import Cart from "@/pages/cart/Cart"
 import DM from "@/pages/dm/DM"
-import Order from "@/pages/report/Order"
 
 
 type TRouteData = {
@@ -131,14 +130,6 @@ export const RouterData: TRouteData[] = [
     subject: "employee",
     icon: <UserOutlined />,
     element: <Employees />,
-  },
-    {
-    key: "/order",
-    path: "/order",
-    label: "Order",
-    subject: "report",
-    icon: <UnorderedListOutlined />,
-    element: <Order />,
   },
   {
     key: "/report",

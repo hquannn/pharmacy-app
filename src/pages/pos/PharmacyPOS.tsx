@@ -63,6 +63,8 @@ interface Customer {
   label: string
 }
 
+
+
 export default function PharmacyPOS() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);

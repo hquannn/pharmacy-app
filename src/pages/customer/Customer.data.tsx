@@ -52,19 +52,6 @@ export const fields: (typeForm: string) => Field[] = (typeForm = 'add') => [
     type: "text",
     rules: [{ required: true }],
   },
-  {name: 'username', label: 'Username', type: 'text', rules: typeForm === 'edit' ? [] : [{required: true, min: 6}], disable: typeForm === 'edit'},
-  {
-    name: 'role',
-    label: 'Role',
-    type: 'select',
-    rules: [{required: true}],
-    options: [{label: 'CUSTOMER', value: 'CUSTOMER'}],
-    disable: typeForm === 'edit',
-    hide: typeForm === 'edit',
-  },
-    {name: 'password', label: 'Password', type: 'password', rules: [{required: true}],
-      disable: typeForm === 'edit',
-      hide: typeForm === 'edit',},
   {
     name: "firstName",
     label: "First Name",
@@ -78,7 +65,6 @@ export const fields: (typeForm: string) => Field[] = (typeForm = 'add') => [
     rules: [{ required: false }],
   },
   { name: "age", label: "Age", type: "number", rules: [{ required: true }] },
-  // { name: 'birthDate', label: 'Birth Date', type: 'date', rules: [{ required: true }] },
   {
     name: "sex",
     label: "Gender",

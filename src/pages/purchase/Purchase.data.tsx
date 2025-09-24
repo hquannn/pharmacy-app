@@ -1,6 +1,9 @@
 import { Field } from "@/types/FieldTypes"
-import { TableProps } from "antd"
+import { Button, Popconfirm, Space, TableProps } from "antd"
 import {maxDateByField, maxDateByValue, minByValue, minDateByField, minDateByValue} from "@/utils/validators.ts";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import Ability from "@/components/Ability"
+import { PurchaseInterface } from "./Purchase.type";
 
 export const columns = (
   _onEdit: (record: any) => void,
@@ -40,32 +43,32 @@ export const columns = (
       dataIndex: "updatedDate",
       width: 150,
     },
-    // {
-    //   key: "action",
-    //   align: "center",
-    //   width: 100,
-    //   render: (record: PurchaseInterface) => (
-    //     <Space>
-    //       <Ability action="update" subject="stockPurchase">
-    //         <Button hidden
-    //           type="primary"
-    //           icon={<EditOutlined />}
-    //           onClick={() => onEdit(record)}
-    //         />
-    //       </Ability>
-    //       <Popconfirm
-    //         title="Confirm delete"
-    //         okText="Yes"
-    //         cancelText="No"
-    //         onConfirm={() => onDelete(record.id as string)}
-    //       >
-    //         <Ability action="delete" subject="stockPurchase">
-    //           <Button hidden danger type="primary" icon={<DeleteOutlined />} />
-    //         </Ability>
-    //       </Popconfirm>
-    //     </Space>
-    //   ),
-    // },
+    {
+      key: "action",
+      align: "center",
+      width: 100,
+      render: (record: PurchaseInterface) => (
+        <Space>
+          <Ability action="update" subject="stockPurchase">
+            <Button hidden
+              type="primary"
+              icon={<EditOutlined />}
+              onClick={() => _onEdit(record)}
+            />
+          </Ability>
+          <Ability action="delete" subject="stockPurchase">
+            <Popconfirm
+              title="Confirm delete"
+              okText="Yes"
+              cancelText="No"
+              onConfirm={() => _onDelete(record.id as string)}
+            >
+                <Button danger type="primary" icon={<DeleteOutlined />} />
+            </Popconfirm>
+          </Ability>
+        </Space>
+      ),
+    },
   ] satisfies TableProps["columns"]
 
 export const fields: (

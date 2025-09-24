@@ -102,17 +102,14 @@ const MedicineProvider = () => {
       const fd = new FormData();
       fd.append("file", file);
       
-      // Log FormData để debug
       console.log("[onScan] FormData entries:");
       for (let [key, value] of fd.entries()) {
         console.log(key, value);
       }
 
-      // postFormData trả về { code, message, data }
       const resp = await postFormData(SCAN_MEDICINE, fd);
       console.log("[onScan] full backend response:", resp);
 
-      // Check response structure
       if (!resp) {
         console.warn("[onScan] no response");
         return null;
@@ -124,7 +121,6 @@ const MedicineProvider = () => {
         return null;
       }
 
-      // ✅ API response đã có đúng field names rồi
       return {
         name: data.name,
         price: typeof data.price === 'string' ? parseFloat(data.price) : data.price,

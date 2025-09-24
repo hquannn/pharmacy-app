@@ -69,7 +69,6 @@ const useAbility = () => {
         "medicineCategory",
         "pharmacy-pos",
         "setting",
-        "report",
       ]
     )
   if (role === Role.USER) {
